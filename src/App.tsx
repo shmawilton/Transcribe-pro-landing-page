@@ -23,11 +23,7 @@ const VIDEOS = {
 function App() {
   const [activeVideo, setActiveVideo] = useState<'desktop' | 'mobile'>('desktop')
   const [hoveredBtn, setHoveredBtn] = useState<string | null>(null)
-  const [isVideoExpanded, setIsVideoExpanded] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
-
-  const handleExpandVideo = () => setIsVideoExpanded(true)
-  const handleCloseExpanded = () => setIsVideoExpanded(false)
 
   return (
     <div className="page">
@@ -148,7 +144,7 @@ function App() {
           </div>
         </div>
 
-        <div className="video-frame" onClick={handleExpandVideo}>
+        <div className="video-frame">
           <video
             ref={videoRef}
             key={activeVideo}
