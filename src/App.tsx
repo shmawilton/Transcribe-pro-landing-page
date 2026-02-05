@@ -5,13 +5,13 @@ const DOWNLOADS = {
   web: 'https://transcribe-flax.vercel.app/',
 
   windows:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.0/TranscribePro-Setup.exe',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.1/TranscribePro-Setup.exe',
 
   macosArm:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.0/TranscribePro-arm64.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.1/TranscribePro-arm64.dmg',
 
   macosIntel:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.0/TranscribePro.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v1.0.1/TranscribePro.dmg',
 }
 
 // Video demos - place your videos in public/videos/
