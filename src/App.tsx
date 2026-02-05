@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 // Downloads served via GitHub Releases (public repo)
 const DOWNLOADS = {
@@ -14,16 +14,9 @@ const DOWNLOADS = {
     'https://github.com/shmawilton/Transcribe-pro/releases/download/v1.0.1/TranscribePro.dmg',
 }
 
-// Video demos - place your videos in public/videos/
-const VIDEOS = {
-  desktop: '/videos/demo-desktop.mp4',
-  mobile: '/videos/demo-mobile.mp4',
-}
-
 function App() {
   const [activeVideo, setActiveVideo] = useState<'desktop' | 'mobile'>('desktop')
   const [hoveredBtn, setHoveredBtn] = useState<string | null>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <div className="page">
@@ -145,22 +138,15 @@ function App() {
         </div>
 
         <div className="video-frame">
-          <video
-            ref={videoRef}
+          <iframe
             key={activeVideo}
-            src={VIDEOS[activeVideo]}
-            autoPlay
-            loop
-            muted
-            playsInline
             className="video"
+            src="https://www.youtube.com/embed/buSV7VFN5vQ"
+            title="TranscribePro demo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
           />
-          <div className="video-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#006b3f" strokeWidth="1.5">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            <span>Demo video</span>
-          </div>
         </div>
 
         <p className="video-caption">
