@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 // Downloads served via GitHub Releases (public repo)
 const DOWNLOADS = {
-  web: 'https://transcribe-flax.vercel.app/',
+  web: 'https://app.transcribe-pro.app',
 
   windows:
     'https://github.com/shmawilton/Transcribe-pro/releases/download/v1.0.1/TranscribePro.Setup.exe',
