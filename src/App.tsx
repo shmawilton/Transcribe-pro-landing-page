@@ -2,16 +2,19 @@ import { useState } from 'react'
 
 // Downloads served via GitHub Releases (public repo)
 const DOWNLOADS = {
-  web: 'https://transcribe-flax.vercel.app/',
+  web: 'https://app.transcribe-pro.app/',
+
+  android:
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/Transcribe-proV2.apk',
 
   windows:
-    'https://github.com/shmawilton/Transcribe-pro/releases/download/v1.0.1/TranscribePro.Setup.exe',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.Setup.exe',
 
   macosArm:
-    'https://github.com/shmawilton/Transcribe-pro/releases/download/v1.0.1/TranscribePro-arm64.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribePro-V2-arm64.dmg',
 
   macosIntel:
-    'https://github.com/shmawilton/Transcribe-pro/releases/download/v1.0.1/TranscribePro.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.dmg',
 }
 
 function App() {
@@ -49,6 +52,25 @@ function App() {
             <div className="dl-info">
               <span className="dl-name">Open Web App</span>
               <span className="dl-hint">Works in any browser</span>
+            </div>
+          </a>
+
+          {/* Android APK */}
+          <a
+            href={DOWNLOADS.android}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`dl-btn ${hoveredBtn === 'android' ? 'pressed' : ''}`}
+            onMouseEnter={() => setHoveredBtn('android')}
+            onMouseLeave={() => setHoveredBtn(null)}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.4 4.3 6.1 2.4a.5.5 0 0 1 .85-.53l1.4 2.02A6.1 6.1 0 0 1 12 3.5c1.3 0 2.5.41 3.55 1.14l1.4-2.02a.5.5 0 0 1 .85.53l-1.3 1.9A5.98 5.98 0 0 1 18 8v7.5c0 .83-.67 1.5-1.5 1.5h-.5v2.5a.5.5 0 0 1-1 0V17H9v2.5a.5.5 0 0 1-1 0V17h-.5A1.5 1.5 0 0 1 6 15.5V8c0-1.36.44-2.61 1.4-3.7ZM9 7a.75.75 0 1 0 0-1.5A.75.75 0 0 0 9 7Zm6 0a.75.75 0 1 0 0-1.5A.75.75 0 0 0 15 7Z" />
+            </svg>
+            <div className="dl-info">
+              <span className="dl-name">Android</span>
+              <span className="dl-hint">Download .apk</span>
             </div>
           </a>
 
