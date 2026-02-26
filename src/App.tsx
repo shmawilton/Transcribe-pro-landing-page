@@ -5,16 +5,16 @@ const DOWNLOADS = {
   web: 'https://app.transcribe-pro.app/',
 
   android:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/Transcribe-proV2.apk',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/Transcribe-pro.apk',
 
   windows:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.Setup.exe',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/TranscribePro.Setup.exe',
 
   macosArm:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribePro-V2-arm64.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/TranscribePro-arm64.dmg',
 
   macosIntel:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/TranscribePro.dmg',
 }
 
 function App() {
