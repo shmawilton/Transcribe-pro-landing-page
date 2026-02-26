@@ -5,7 +5,7 @@ const DOWNLOADS = {
   web: 'https://app.transcribe-pro.app/',
 
   android:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/Transcribe-pro.apk',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/TranscribePro.apk',
 
   windows:
     'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.1/TranscribePro.Setup.exe',
