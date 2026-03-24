@@ -5,21 +5,46 @@ const DOWNLOADS = {
   web: 'https://app.transcribe-pro.app/',
 
   android:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/Transcribe-proV2.apk',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.2/TranscribePro.apk',
 
   windows:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.Setup.exe',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.2/TranscribePro.Setup.exe',
 
   macosArm:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribePro-V2-arm64.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.2/TranscribePro-arm64.dmg',
 
   macosIntel:
-    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.0/TranscribeProV2.dmg',
+    'https://github.com/shmawilton/Transcribe-pro-landing-page/releases/download/v2.0.2/TranscribePro.dmg',
+}
+
+type VideoKey = 'desktop' | 'mobile'
+
+const VIDEOS: Record<
+  VideoKey,
+  {
+    src: string
+    title: string
+    caption: string
+  }
+> = {
+  desktop: {
+    src: 'https://www.youtube.com/embed/xH6umGUMt-E',
+    title: 'TranscribePro desktop demo',
+    caption:
+      'Load audio, add timestamped markers, adjust playback speed, and export your notes.',
+  },
+  mobile: {
+    src: 'https://www.youtube.com/embed/c0iEwnMPwDQ',
+    title: 'TranscribePro mobile navigation demo',
+    caption:
+      'Follow the mobile navigation flow in a quick vertical walkthrough built for phone users.',
+  },
 }
 
 function App() {
-  const [activeVideo, setActiveVideo] = useState<'desktop' | 'mobile'>('desktop')
+  const [activeVideo, setActiveVideo] = useState<VideoKey>('desktop')
   const [hoveredBtn, setHoveredBtn] = useState<string | null>(null)
+  const currentVideo = VIDEOS[activeVideo]
 
   return (
     <div className="page">
@@ -159,21 +184,19 @@ function App() {
           </div>
         </div>
 
-        <div className="video-frame">
+        <div className={`video-frame ${activeVideo === 'mobile' ? 'mobile-video-frame' : ''}`}>
           <iframe
             key={activeVideo}
             className="video"
-            src="https://www.youtube.com/embed/xH6umGUMt-E"
-            title="TranscribePro demo"
+            src={currentVideo.src}
+            title={currentVideo.title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
         </div>
 
-        <p className="video-caption">
-          Load audio, add timestamped markers, adjust playback speed, and export your notes.
-        </p>
+        <p className="video-caption">{currentVideo.caption}</p>
       </div>
 
       <div className="accent-line" />

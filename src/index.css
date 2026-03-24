@@ -243,6 +243,11 @@ button { font-family: inherit; cursor: pointer; }
   transition: transform 0.2s ease;
 }
 
+.video-frame.mobile-video-frame {
+  max-width: 320px;
+  aspect-ratio: 9 / 19.5;
+}
+
 .video-frame:hover {
   transform: scale(1.01);
 }
@@ -484,6 +489,11 @@ button { font-family: inherit; cursor: pointer; }
   .video-frame {
     max-width: 100%;
     aspect-ratio: 16 / 9;
+  }
+
+  .video-frame.mobile-video-frame {
+    max-width: 320px;
+    aspect-ratio: 9 / 19.5;
   }
 
   .accent-line {
