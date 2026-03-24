@@ -19,6 +19,16 @@ const DOWNLOADS = {
 
 type VideoKey = 'desktop' | 'mobile'
 
+function getYouTubeEmbedUrl(url: string) {
+  const shortsMatch = url.match(/youtube\.com\/shorts\/([^?&/]+)/i)
+
+  if (shortsMatch) {
+    return `https://www.youtube.com/embed/${shortsMatch[1]}`
+  }
+
+  return url
+}
+
 const VIDEOS: Record<
   VideoKey,
   {
@@ -34,7 +44,7 @@ const VIDEOS: Record<
       'Load audio, add timestamped markers, adjust playback speed, and export your notes.',
   },
   mobile: {
-    src: 'https://www.youtube.com/embed/c0iEwnMPwDQ',
+    src: 'https://youtube.com/shorts/c0iEwnMPwDQ',
     title: 'TranscribePro mobile navigation demo',
     caption:
       'Follow the mobile navigation flow in a quick vertical walkthrough built for phone users.',
@@ -188,7 +198,7 @@ function App() {
           <iframe
             key={activeVideo}
             className="video"
-            src={currentVideo.src}
+            src={getYouTubeEmbedUrl(currentVideo.src)}
             title={currentVideo.title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
